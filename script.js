@@ -10,9 +10,9 @@
         }
 
         add (info) {
-            let newContact = new Contact(info.name, info.email, info.phone, info.relation);
+            let newContact = new  Contact(info.name, info.email, info.phone, info.relation);
             this.contact.push(newContact);
-            console.log(book); 
+            console.log(book);  
         }
 
 //***************************deleteAt(index)************************** */
@@ -29,16 +29,6 @@
                 }
             }
         }    
-            
-                                    //My Attempt - many dif variations of this: 
-                                    // this.contact.forEach((remove)=> {
-                                    //     if (remove.name === name) {
-                                    //        this.contact.splice (name, 1); 
-                                    //         console.log (book);
-                                    // }
-                                    //     });
-
-        
         
         print () {
             this.contact.forEach((print)=> {
@@ -56,7 +46,7 @@
             this.relation = relation; 
         }
     }
-
+ 
 const book = new AddressBook(); 
 
     while (true) {

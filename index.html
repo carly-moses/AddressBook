@@ -4,10 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="style.css" rel="stylesheet" type="text/css" media="all">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>Address Book Lab</title>
 </head>
 <body>
-    <h1>Address Book</h1>
-    <script src=script.js></script>
+
+    <div class="info">
+        <form id="enterinfo">
+                <h1>My Contacts</h1>
+                <input type="text" id="name" name="name" value="Name">
+                <input type="text"  id="email" name="email" value="Email">
+                <input type="text"  id="phone" name="phone" value="Phone">
+                <input type="text"  id="relation" name="relation" value="Relation">
+                <input type="submit" id="add" name="add" value="Add">
+        </form>
+    </div>
+  
+
+    <section class="contacts">
+        <div class="contact1">
+            <p>Name: Carly</p>
+            <p>Email: carly@email.com</p>
+            <p>Phone: 248-123-4444</p>
+            <p>Relation: Owner</p>
+        </div>
+        <div class=delete>
+            <button id="btn"><i class="material-icons">trash</i></button>-->
+        </div>
+    </section>
+    <script src=script2.js></script>
 </body>
 </html>
