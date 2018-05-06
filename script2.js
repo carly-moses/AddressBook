@@ -2,52 +2,52 @@
 {
 
     class AddressBook {
-        constructor (/*contact*/) {
-            this.contact = [{name: "Sarah", email: "sarah@gmail.com", phone: "248-111-2222", relation:"friend"}];
+        constructor () {
+            this.contacts = []; 
         }
 
         add () {
             const addContact = new Contact(name.value, email.value, phone.value, relation.value);
-            this.contact.push(addContact);
+            this.contacts.push(addContact);
         }  
  
         display () {
-            let contact_section = document.getElementByClassName("contacts");
-            
-            for (let i=0; i < 2; i++) {
-            const newContact = document.createElement("div");
-            let icon = document.createElement("i");
-            newContact.innerHTML = `
-                <p> Name: ${name.value} </p>
-                <p> Phone: ${phone.value} </p>
-                <p> Email: ${email.value} </p>
-                <p> Relation: ${relation.value} </p>
-              `
-            }
+            let contact_section = document.getElementById("contacts");
 
-            newContact.appendChild(contact_section); 
-            newContact.appendChild(icon); 
-            
-            div.classList.add("contact_container"); 
+            //Create HTML elements to add
+            let div = document.createElement("div");
+            let info = document.createElement("p");
+            let icon = document.createElement ("i"); 
+
+            //Add CSS classes to created HTML elements
+            div.classList.add("contact1"); 
             icon.classList.add("material-icons"); 
             icon.classList.add("delete"); 
 
+            //Adding Text
+            icon.innerText = "delete";
+            info.innerText =`Name: ${name.value}
+            Phone: ${phone.value}
+            Email: ${email.value}
+            Relation: ${relation.value}
+          `;
+
+            //Appending info to div and div to contact section
+            div.appendChild(info);
+            div.appendChild(icon); 
+            contact_section.appendChild(div); 
+
+            icon.addEventListener("click", () => {
+                div.remove(); 
+            });
+            
         }
     
         deleteAt () {
-            icon.addEventListener("click", () => {
-                div.remove(); 
-              });
-            }
+            //Must complete
+        }
     }
-    // let name = document.querySelector("#name"); 
-    // let email = document.querySelector("#email"); 
-    // let number = document.querySelector("#phone"); 
-    // let relation = document.querySelector("#relation"); 
-    let addBtn = document.querySelector("#add"); 
 
-    const book = new AddressBook(); 
-    
 
     class Contact{
         constructor (name, email, phone, relation) {
@@ -58,10 +58,24 @@
     
         }
     }
+  
+    const book = new AddressBook(); 
+    
+    let name = document.querySelector("#name"); 
+    let email = document.querySelector("#email"); 
+    let phone = document.querySelector("#phone"); 
+    let relation = document.querySelector("#relation"); 
+    let addBtn = document.querySelector("#add"); 
+    //let form = document.querySelector("#enterinfo"); Only need if you do more like enter button
+ 
 
     addBtn.addEventListener("click", () => {
         book.add();
         book.display();
+        name.value = "";
+        email.value = "";
+        phone.value = "";
+        relation.value = "";
       }); 
 
      
@@ -69,33 +83,21 @@
 }
 //onsubmit to create an alert once item added
 
-
-// const form = document.getElementByID("enterinfo").submit();
-// console.log (form.id); 
-// for (i = 0; i < x.length ;i++) {
-//     const newContact = document.createElement ("div");
-//     contact.innerHTML = `
-//         <p> Name: ${person.name} </p>
-//         <p> Phone: ${person.phone} </p>
-//         <p> Email: ${person.name} </p>
-//         <p> Relation: ${person.relation} </p>
-//         `
-// }
-
-//     //document.getElementById("demo").innerHTML = text;
-//     document.getElementsByClassName(contacts).appendChild(newContact);
-
-
-
-//const form = document.getElementsByClassName(enterinfo);
-
- 
+//****LAB NOTES */
 // const person = {
 //     name: "",
 //     email: "",
 //     phone: "", 
 //     relation: ""
 // }; 
+// const person = {
+// name: "adam"
+// address: "86349844"
+// phone: "kjegf"
+// relation: "jefhwe"
+//};
+//
+
 
 //for (let i=0; i < 2; i++)
 // const newContact = document.createElement ("div");
@@ -104,28 +106,7 @@
 //     <p> Phone: ${person.phone} </p>
 //     <p> Email: ${person.name} </p>
 //     <p> Relation: ${person.relation} </p>
-//     `
-
-
-
-
-///****LAB NOTES */
-
-// const person = {
-// name: "adam"
-// address: "86349844"
-// phone: "kjegf"
-// relation: "jefhwe"
-//};
-//
-//
-//for (let i=0, i <array.length, i++  )
-    //const contact = document.createElement ("div");
-    //contact.innerHTML = `
-//<p> Name: ${person.name} </p>
-//<p> Phone: ${person.phones}
-//<p> 
-//`
+//    `
    //document.body.appendChild(contact); 
 // }
    // append to p tags - app new div to body - an array means you need a loop to catch lines 28-32
