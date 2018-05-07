@@ -18,7 +18,10 @@ body {
     width: 600px;
     border-radius: 5px;
     background-color: rgb(179,178,176, 0.6); 
-
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 h1 {
@@ -64,8 +67,8 @@ input[type=button] {
  
  .delete {
     position: absolute;
-    bottom: 0;
-    right: 0;
+    bottom: -10px;
+    right: -10px;
  }
 .material-icons {
     border-radius: 50%;

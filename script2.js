@@ -26,7 +26,8 @@
 
             //Adding Text
             icon.innerText = "delete";
-            info.innerText =`Name: ${name.value}
+            info.innerText =`
+            Name: ${name.value}
             Phone: ${phone.value}
             Email: ${email.value}
             Relation: ${relation.value}
@@ -37,6 +38,7 @@
             div.appendChild(icon); 
             contact_section.appendChild(div); 
 
+
             icon.addEventListener("click", () => {
                 div.remove(); 
             });
@@ -44,7 +46,7 @@
         }
     
         deleteAt () {
-            //Must complete
+            //Must complete-have not figured it out
         }
     }
 
@@ -55,6 +57,7 @@
             this.email = email;
             this.phone = phone;
             this.relation = relation; 
+            this.indexValue = ""; 
     
         }
     }
@@ -66,7 +69,7 @@
     let phone = document.querySelector("#phone"); 
     let relation = document.querySelector("#relation"); 
     let addBtn = document.querySelector("#add"); 
-    //let form = document.querySelector("#enterinfo"); Only need if you do more like enter button
+    //let form = document.querySelector("#enterinfo"); Use if I want to try to enter form info with "enter" button
  
 
     addBtn.addEventListener("click", () => {
@@ -111,11 +114,6 @@
 // }
    // append to p tags - app new div to body - an array means you need a loop to catch lines 28-32
 
-
-   //Google searches
-//create a new elem in js 
-//loop through array create new elem for each array
-//create elem inside of an array
 
 
 
